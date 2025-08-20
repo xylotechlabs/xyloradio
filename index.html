@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>XyloRadio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- important for mobile -->
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,16 +15,21 @@
       background: #222;
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 20px 10px;
     }
     h1 {
       margin: 0;
+      font-size: 1.6rem;
+    }
+    p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
     }
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 15px;
     }
     .station {
       background: #fff;
@@ -31,14 +37,19 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       padding: 15px;
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .station:hover {
+      transform: scale(1.02);
     }
     .station h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
+      margin: 0;
+      font-size: 1.1rem;
     }
     audio {
       width: 100%;
       margin-top: 10px;
+      border-radius: 6px;
     }
     footer {
       text-align: center;
@@ -46,12 +57,18 @@
       color: #fff;
       padding: 10px;
       margin-top: 20px;
+      font-size: 0.8rem;
+    }
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.3rem; }
+      .station h2 { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🎶 XyloRadio Hub 🎶</h1>
+    <h1>🎶 XyloRadio - Internet Radio Hub 🎶</h1>
     <p>Click play and enjoy live streams from around the world</p>
   </header>
 
@@ -59,35 +76,35 @@
 
     <div class="station">
       <h2>BBC World Service</h2>
-      <audio controls>
+      <audio controls preload="none">
         <source src="http://stream.live.vc.bbcmedia.co.uk/bbc_world_service" type="audio/mpeg">
       </audio>
     </div>
 
     <div class="station">
       <h2>Radio Paradise</h2>
-      <audio controls>
+      <audio controls preload="none">
         <source src="http://stream.radioparadise.com/mp3-192" type="audio/mpeg">
       </audio>
     </div>
 
     <div class="station">
       <h2>Radio Swiss Pop</h2>
-      <audio controls>
+      <audio controls preload="none">
         <source src="http://stream.srg-ssr.ch/m/rsp/mp3_128" type="audio/mpeg">
       </audio>
     </div>
 
     <div class="station">
       <h2>KEXP Seattle</h2>
-      <audio controls>
+      <audio controls preload="none">
         <source src="https://kexp-mp3-128.streamguys1.com/kexp128.mp3" type="audio/mpeg">
       </audio>
     </div>
 
     <div class="station">
       <h2>Classic FM (UK)</h2>
-      <audio controls>
+      <audio controls preload="none">
         <source src="https://media-ssl.musicradio.com/ClassicFM" type="audio/mpeg">
       </audio>
     </div>
